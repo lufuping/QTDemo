@@ -11,6 +11,12 @@ public:
 
 signals:
 
+public slots:
+    void fight();
+    // 槽重载
+    void fight(QString);
+    // 新建逃跑槽函数
+    void escape();
 };
 
 #endif // LODIER_H

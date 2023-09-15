@@ -1,15 +1,73 @@
 #include "widget01.h"
 #include "ui_widget01.h"
-
+#include "QPushButton"
+#include"mywidget.h"
+#include"lodier.h"
 Widget01::Widget01(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::Widget01)
 {
     ui->setupUi(this);
-}
+#if 0
+    // 创建一个按钮，按下按钮窗口关闭
+    QPushButton *button1= new QPushButton("退出",this);
+    button1->setGeometry(50,50,200,100);
+    QPushButton *button2= new QPushButton("退出2",this);
+    button2->setGeometry(500,50,200,100);
+    // 创建连接
+    //connect(button1,SIGNAL(clicked(bool)),this,SLOT(close())); // qt4
+    connect(button1,&QPushButton::clicked,button2,&QPushButton::clicked); // qt5
 
+    // 信号传递信号
+    connect(button2,&QPushButton::clicked,this,&Widget01::close);
+#endif
+#if 1
+    // 自定义信号和槽的测试
+    // 实例化信号和槽
+      mywidget *s=  new mywidget();
+      lodier *l= new lodier();
+     //创建连接
+      // 信号指针
+      void (mywidget::*go)()= &mywidget::go;
+      void (mywidget::*go1)(QString)= &mywidget::go;
+      // 槽指针error-请先设置百度Appid,申请链接看软件介绍(免费的)
+      void (lodier::*f)()= &lodier::fight;
+      void (lodier::*f1)(QString)= &lodier::fight;
+      void(lodier::*escape)()=&lodier::escape;
+      // 一个信号连接多个槽函数，QT5执行顺序按照创建的顺序进行
+      connect(s,go,l,f);
+
+      connect(s,go,l,escape);
+
+      connect(s,go1,l,f1);
+      // 尝试QT4连接
+//      connect(s,SIGNAL(go()),l,SLOT(fight()));
+//      connect(s,SIGNAL(go(QString)),l,SLOT(fight(QString)));
+
+     // 发送信号
+     // 断开连接
+     s->disconnect(s,go,l,escape);
+      s->go();
+      emit s->go("冲左");
+
+
+#endif
+}
+//QPushButton *button1= new QPushButton("这是一个按钮",nullptr);
+    // 设置按钮位置和大小
+// *button1 ->setGeometry(50, 50, 200, 100);
 Widget01::~Widget01()
 {
     delete ui;
 }
 
+// 处理登录逻辑
+void Widget01::on_btn_login_clicked()
+{
+
+}
+// 处理注册逻辑
+void Widget01::on_pushButton_2_clicked()
+{
+
+}
