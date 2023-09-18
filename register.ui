@@ -1,68 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Widget01</class>
- <widget class="QWidget" name="Widget01">
+ <class>Register</class>
+ <widget class="QWidget" name="Register">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>400</width>
+    <height>271</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Widget01</string>
+   <string>Form</string>
   </property>
-  <widget class="QLineEdit" name="account_L">
+  <widget class="QLineEdit" name="account_R">
    <property name="geometry">
     <rect>
-     <x>330</x>
-     <y>140</y>
+     <x>130</x>
+     <y>40</y>
      <width>113</width>
      <height>20</height>
     </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="echoMode">
-    <enum>QLineEdit::Normal</enum>
    </property>
   </widget>
-  <widget class="QLineEdit" name="password_L">
+  <widget class="QLineEdit" name="password_R">
    <property name="geometry">
     <rect>
-     <x>330</x>
-     <y>170</y>
+     <x>130</x>
+     <y>80</y>
      <width>113</width>
      <height>20</height>
     </rect>
-   </property>
-   <property name="text">
-    <string/>
    </property>
    <property name="echoMode">
     <enum>QLineEdit::Password</enum>
    </property>
   </widget>
-  <widget class="QPushButton" name="btn_login">
+  <widget class="QLineEdit" name="confirmPassword">
    <property name="geometry">
     <rect>
-     <x>280</x>
-     <y>230</y>
-     <width>75</width>
-     <height>23</height>
+     <x>130</x>
+     <y>120</y>
+     <width>113</width>
+     <height>20</height>
     </rect>
    </property>
-   <property name="text">
-    <string>登录</string>
+   <property name="echoMode">
+    <enum>QLineEdit::Password</enum>
    </property>
   </widget>
-  <widget class="QPushButton" name="btn_register">
+  <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>410</x>
-     <y>230</y>
+     <x>150</x>
+     <y>200</y>
      <width>75</width>
      <height>23</height>
     </rect>
@@ -71,11 +62,11 @@
     <string>注册</string>
    </property>
   </widget>
-  <widget class="QLabel" name="account">
+  <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>280</x>
-     <y>140</y>
+     <x>70</x>
+     <y>50</y>
      <width>54</width>
      <height>12</height>
     </rect>
@@ -84,17 +75,30 @@
     <string>账号</string>
    </property>
   </widget>
-  <widget class="QLabel" name="password">
+  <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>280</x>
-     <y>180</y>
+     <x>70</x>
+     <y>90</y>
      <width>54</width>
      <height>12</height>
     </rect>
    </property>
    <property name="text">
     <string>密码</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>130</y>
+     <width>54</width>
+     <height>12</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>确认密码</string>
    </property>
   </widget>
  </widget>

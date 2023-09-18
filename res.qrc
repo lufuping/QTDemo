@@ -1,3 +1,6 @@
 <RCC>
-    <qresource prefix="/"/>
+    <qresource prefix="/">
+        <file alias="123">D:/picture/123.gif</file>
+        <file alias="game">D:/picture/63784607567748.png</file>
+    </qresource>
 </RCC>
