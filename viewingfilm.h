@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include<QMediaPlayer>
+#include<QFileDialog>
 namespace Ui {
 class ViewingFilm;
 }
@@ -25,9 +26,12 @@ private slots:
     void on_next_clicked();
 
 
+    void on_btnChoose_clicked();
+
 private:
     Ui::ViewingFilm *ui;
     QMediaPlayer *_player;
+    QMovie *m;
 };
 
 #endif // VIEWINGFILM_H

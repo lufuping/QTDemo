@@ -5,6 +5,8 @@
 #include"register.h"
 #include"viewingfilm.h"
 #include"playvideo.h"
+#include"menu.h"
+#include"licenseplaterecognition.h"
 QT_BEGIN_NAMESPACE
 namespace Ui { class Widget01; }
 QT_END_NAMESPACE
@@ -26,11 +28,17 @@ private slots:
     void quitShowUi(QString acc,QString pas);
     // 处理视频播放器的打开
     void openVideoWin();
-
+    // 打开播放器页面
+    void openMyPlayer();
+    // 打开AI功能页面
+    void openMyAI();
 private:
     Ui::Widget01 *ui;
     Register *r_ui;
     ViewingFilm *v_ui;
     PlayVideo *player_ui;
+    Menu *menu_ui;
+    // 引入车牌识别页面
+    LicensePlateRecognition *car_ui;
 };
 #endif // WIDGET01_H

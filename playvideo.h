@@ -21,6 +21,8 @@ public:
 private slots:
     void on_testVideo_clicked(bool flag);
 
+    void on_btnChoseVideo_clicked();
+
 private:
     Ui::PlayVideo *ui;
     // 播放器的窗口

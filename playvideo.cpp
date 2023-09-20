@@ -1,6 +1,6 @@
 #include "playvideo.h"
 #include "ui_playvideo.h"
-
+#include<QFileDialog>
 PlayVideo::PlayVideo(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::PlayVideo)
@@ -27,7 +27,7 @@ PlayVideo::PlayVideo(QWidget *parent) :
     // 设置到窗口播放
     player->setVideoOutput(videoWidget);
     // 设置播放的内容
-    player->setMedia(QMediaContent(QUrl::fromLocalFile("E:/百度网盘下载/在线教育项目/1-阿里云上传测试视频/test_video.mp4")));
+   // player->setMedia(QMediaContent(QUrl::fromLocalFile("E:/百度网盘下载/在线教育项目/1-阿里云上传测试视频/test_video.mp4")));
     // 设置URL
     //QString url="https://www.bilibili.com/video/BV1Ky4y1F7Rc/?spm_id_from=333.1007.tianma.2-1-4.click&vd_source=7244cdd8c7d347776bc576f7afef7c8b";
     //player->setMedia(QMediaContent(QUrl(url)));
@@ -71,4 +71,13 @@ void PlayVideo::on_testVideo_clicked(bool flag)
         // 将按钮标签更改为播放
         ui->testVideo->setText("播放");
     }
+}
+
+void PlayVideo::on_btnChoseVideo_clicked()
+{
+    // 设置播放的内容
+        QString playFilePath = QFileDialog::getOpenFileName(this, tr("Open File"),
+                                                            "/",
+                                                            tr("(*.mp4 *.avi *.mov *.flv *.mpg *.mpeg *.3gp *.webm *.saf)"));
+        player->setMedia(QMediaContent(QUrl::fromLocalFile(playFilePath)));
 }

@@ -53,8 +53,8 @@ void ViewingFilm::on_play_clicked(bool flag)
     }
 #endif
 #if 1
-    if(flag==true){
-        QMovie *m= new QMovie(":/123");
+    if(flag==true&&m!=nullptr){
+
         // 开始
         m->start();
         // 设置像素
@@ -79,4 +79,12 @@ void ViewingFilm::on_next_clicked()
     // 打开视频播放窗口
     // 发送打开视频的信号
     this->isQut();
+}
+
+void ViewingFilm::on_btnChoose_clicked()
+{
+    QString playFilePath = QFileDialog::getOpenFileName(this, tr("Open File"),
+                                                             "/",
+                                                             tr("Images (*.png *.xpm *.jpg *.jpeg *.gif *.bmp *.svg *.tif *.tiff)"));
+            m= new QMovie(playFilePath);
 }

@@ -17,11 +17,17 @@ Widget01::Widget01(QWidget *parent)
     r_ui= new Register();
     v_ui=new ViewingFilm();
     player_ui=new PlayVideo();
+    menu_ui=new Menu();
+    car_ui=new LicensePlateRecognition();
     init();
     // 建立回退信号的连接
     connect(r_ui,&Register::qutUi,this,&Widget01::quitShowUi);
     // 创建打开视频的信号连接
     connect(v_ui,&ViewingFilm::isQut,this,&Widget01::openVideoWin);
+    // 建立打开播放器页面的连接
+    connect(menu_ui,&Menu::openMyPlayer,this,&Widget01::openMyPlayer);
+    // 建立打开AI处理页面的连接
+    connect(menu_ui,&Menu::openMyAI,this,&Widget01::openMyAI);
 #if 0
     // 创建一个按钮，按下按钮窗口关闭
     QPushButton *button1= new QPushButton("退出",this);
@@ -89,7 +95,9 @@ void Widget01::on_btn_login_clicked()
         // todo: 转跳到系统页面
         // 1. 实现跳转
         this->hide();
-        v_ui->show();
+        // 转跳到功能导航页
+        menu_ui->show();
+        //v_ui->show();
     }else if(res==1){
         //qDebug()<<"账号密码错误";
         QMessageBox::critical(this,"错误","用户不存在");
@@ -124,4 +132,20 @@ void Widget01::openVideoWin()
     //this->show();
     player_ui->show();
 
+}
+
+void Widget01::openMyPlayer()
+{
+    // 打开播放器页面
+    v_ui->show();
+    // 最小化菜单
+    menu_ui->hide();
+}
+
+void Widget01::openMyAI()
+{
+    // 打开车牌识别页面
+    car_ui->show();
+    // 最小化菜单
+    menu_ui->hide();
 }

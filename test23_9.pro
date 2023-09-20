@@ -16,9 +16,11 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     data.cpp \
+    licenseplaterecognition.cpp \
     lodier.cpp \
     main.cpp \
     mainwindowtest.cpp \
+    menu.cpp \
     mywidget.cpp \
     playvideo.cpp \
     register.cpp \
@@ -27,8 +29,10 @@ SOURCES += \
 
 HEADERS += \
     data.h \
+    licenseplaterecognition.h \
     lodier.h \
     mainwindowtest.h \
+    menu.h \
     mywidget.h \
     playvideo.h \
     register.h \
@@ -36,7 +40,9 @@ HEADERS += \
     widget01.h
 
 FORMS += \
+    licenseplaterecognition.ui \
     mainwindowtest.ui \
+    menu.ui \
     playvideo.ui \
     register.ui \
     viewingfilm.ui \
